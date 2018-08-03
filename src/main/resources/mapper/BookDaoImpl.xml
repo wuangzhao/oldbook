@@ -10,11 +10,17 @@
     </delete>
 
     <select id="queryById" resultType="org.fd.entity.BookEntity" parameterType="java.lang.Integer">
-        SELECT book_id, book_name, book_isbn FROM book WHERE book_id = #{bookId}
+        SELECT book_id,book.book_name,book_isbn FROM book WHERE book_id = #{bookId}
     </select>
 
     <select id="queryAll" resultType="org.fd.entity.BookEntity">
         SELECT * FROM book
+    </select>
+    <select id="queryByISBN" resultType="org.fd.entity.BookEntity" parameterType="org.fd.entity.BookEntity">
+        SELECT * FROM book WHERE book_isbn = #{bookISBN}
+    </select>
+    <select id="queryByName" resultType="org.fd.entity.BookEntity">
+        SELECT * FROM book WHERE book_name LIKE CONCAT(CONCAT('%', #{bookName}), '%')
     </select>
 
 </mapper>

@@ -4,6 +4,7 @@ import org.fd.entity.BookEntity;
 
 import java.util.List;
 
+
 public interface BookDao {
 
     /**
@@ -31,5 +32,14 @@ public interface BookDao {
      * @param bookEntity
      */
     void insert(BookEntity bookEntity);
+
+    /**
+     * 根据isbn
+     * @param bookISBN
+     * @return
+     */
+    BookEntity queryByISBN(String bookISBN);
+
+    List<BookEntity> queryByName(String bookName);
 
 }
