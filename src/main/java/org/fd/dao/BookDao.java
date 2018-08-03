@@ -11,4 +11,6 @@ public interface BookDao {
      */
     Book queryById(long bookId);
 
+    Book queryAll();
+
 }
