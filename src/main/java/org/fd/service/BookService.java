@@ -24,7 +24,7 @@ public interface BookService {
      * @param bookName 书本名称
      * @return BookEntity
      */
-    BookEntity getByName(String bookName);
+    List<BookEntity> getByName(String bookName);
 
     /**
      * 通过ISBN查书
