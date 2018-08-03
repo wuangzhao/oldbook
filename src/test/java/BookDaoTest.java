@@ -16,10 +16,11 @@ public class BookDaoTest {
 
     @Test
     public void testQueryById() throws Exception{
-        int bookId = 100000;
+        int bookId = 10000;
         BookEntity book = bookDao.queryById(bookId);
         System.out.println("--------------------------------");
-        System.out.println(book.getBookName());
+        if (book != null)
+            System.out.println(book.getBookName());
         System.out.println("--------------------------------");
     }
 }

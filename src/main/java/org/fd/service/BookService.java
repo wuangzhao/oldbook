@@ -1,4 +1,4 @@
-package org.fd.service.impl;
+package org.fd.service;
 
 import org.fd.entity.BookEntity;
 
