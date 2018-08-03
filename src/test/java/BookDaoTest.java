@@ -1,3 +1,4 @@
+import ch.qos.logback.core.encoder.EchoEncoder;
 import org.fd.dao.BookDao;
 import org.fd.entity.BookEntity;
 import org.junit.Test;
@@ -27,12 +28,28 @@ public class BookDaoTest {
     }
 
     @Test
-    public void testInsert() throws Exception {
-        BookEntity bookEntity = new BookEntity();
-        bookEntity.setBookISBN("123456");
-        bookEntity.setBookName("Java");
-        Boolean isInsert = bookDao.insert(bookEntity);
-        System.out.println(isInsert);
+    public void testQueryByISBN() throws Exception {
+        String bookISBN = "123456";
+        System.out.println(bookDao.queryByISBN(bookISBN).getBookName());
+    }
+
+    @Test
+    public void testQueryByName() throws Exception {
+        String bookName = "Ja";
+        List<BookEntity> bookDaoList = bookDao.queryByName(bookName);
+        for (BookEntity bookEntity : bookDaoList) {
+            System.out.println(bookEntity.getBookName());
+            System.out.println(bookEntity.getBookISBN());
+            System.out.println("--------------------------------");
+        }
+    }
+
+    @Test
+    public void testQueryAll() throws Exception {
+        List<BookEntity> bookEntityList = bookDao.queryAll();
+        for (BookEntity bookEntity : bookEntityList) {
+            System.out.println(bookEntity.getBookName());
+        }
     }
 
     @Test
@@ -42,10 +59,16 @@ public class BookDaoTest {
     }
 
     @Test
-    public void testQuery() throws Exception {
-        List<BookEntity> bookEntityList = bookDao.queryAll();
-        for (BookEntity bookEntity : bookEntityList) {
-            System.out.println(bookEntity.getBookName());
+    public void testInsert() {
+        BookEntity bookEntity = new BookEntity();
+        bookEntity.setBookISBN("123455");
+        bookEntity.setBookName("Linxu");
+        Boolean isInsert = false;
+        try {
+            isInsert = bookDao.insert(bookEntity);
+        } catch (Exception e) {
         }
+        System.out.println(isInsert);
+
     }
 }

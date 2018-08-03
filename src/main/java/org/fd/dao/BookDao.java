@@ -15,6 +15,20 @@ public interface BookDao {
     BookEntity queryById(int bookId);
 
     /**
+     * 根据isbn
+     * @param bookISBN
+     * @return
+     */
+    BookEntity queryByISBN(String bookISBN);
+
+    /**
+     * 通过书名查书
+     * @param bookName
+     * @return
+     */
+    List<BookEntity> queryByName(String bookName);
+
+    /**
      * 查询所有书籍
      * @return BookEntity
      */
@@ -35,20 +49,5 @@ public interface BookDao {
      * @return false 失败
      */
     boolean insert(BookEntity bookEntity);
-
-    /**
-     * 根据isbn
-     * @param bookISBN
-     * @return
-     */
-    BookEntity queryByISBN(String bookISBN);
-
-    /**
-     * 通过书名查书
-     * @param bookName
-     * @return
-     */
-    List<BookEntity> queryByName(String bookName);
-
 
 }

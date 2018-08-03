@@ -3,7 +3,13 @@
 <mapper namespace="org.fd.dao.BuyDao">
 
 
-    <insert id="insert">
-        INSERT
+    <resultMap id="buyEntityList" type="org.fd.entity.BuyEntity"/>
+
+
+    <!--TODO-->
+    <!--有问题，求解中-->
+    <insert id="insert" >
+        INSERT INTO buy(user_id, sell_id) VALUES (#{userEntity.userId}, #{sellEntity.sellId})
     </insert>
+
 </mapper>
