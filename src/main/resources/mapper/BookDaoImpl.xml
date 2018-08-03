@@ -9,8 +9,8 @@
         DELETE FROM book WHERE book_id = #{bookId}
     </delete>
 
-    <select id="queryById" resultType="org.fd.entity.BookEntity" parameterType="java.lang.Long">
-        SELECT * FROM book WHERE book_id = #{bookId}
+    <select id="queryById" resultType="org.fd.entity.BookEntity" parameterType="java.lang.Integer">
+        SELECT book_id, book_name, book_isbn FROM book WHERE book_id = #{bookId}
     </select>
 
     <select id="queryAll" resultType="org.fd.entity.BookEntity">

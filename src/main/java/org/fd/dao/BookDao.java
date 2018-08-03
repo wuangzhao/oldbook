@@ -11,7 +11,7 @@ public interface BookDao {
      * @param bookId  书本id
      * @return BookEntity
      */
-    BookEntity queryById(long bookId);
+    BookEntity queryById(int bookId);
 
     /**
      * 查询所有书籍
@@ -24,7 +24,7 @@ public interface BookDao {
      * @param BookId 书本id
      */
 
-    void DeleteById(Long BookId);
+    void DeleteById(int BookId);
 
     /**
      * 新增书籍
