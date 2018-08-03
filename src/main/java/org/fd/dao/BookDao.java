@@ -23,14 +23,18 @@ public interface BookDao {
     /**
      * 按照书本序号删除
      * @param BookId 书本id
+     * @return true 成功
+     * @return false 失败
      */
-    void DeleteById(int BookId);
+    boolean DeleteById(int BookId);
 
     /**
      * 新增书籍
      * @param bookEntity
+     * @return true 成功
+     * @return false 失败
      */
-    void insert(BookEntity bookEntity);
+    boolean insert(BookEntity bookEntity);
 
     /**
      * 根据isbn
@@ -39,6 +43,12 @@ public interface BookDao {
      */
     BookEntity queryByISBN(String bookISBN);
 
+    /**
+     * 通过书名查书
+     * @param bookName
+     * @return
+     */
     List<BookEntity> queryByName(String bookName);
+
 
 }

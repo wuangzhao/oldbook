@@ -2,25 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.fd.dao.BookDao">
-    <insert id="insert">
-      INSERT INTO book
+    <resultMap id="bookEntityMap" type="org.fd.entity.BookEntity">
+
+    </resultMap>
+    <insert id="insert" parameterType="org.fd.entity.BookEntity">
+      INSERT INTO book(book_id, book_name, book_isbn) VALUES (#{bookId}, #{bookName}, #{bookISBN})
     </insert>
-    <delete id="DeleteById">
+    <delete id="DeleteById" parameterType="java.lang.Integer">
         DELETE FROM book WHERE book_id = #{bookId}
     </delete>
 
     <select id="queryById" resultType="org.fd.entity.BookEntity" parameterType="java.lang.Integer">
-        SELECT book_id,book.book_name,book_isbn FROM book WHERE book_id = #{bookId}
+        SELECT book_id, book_name, book_isbn FROM book WHERE book_id = #{bookId}
     </select>
 
-    <select id="queryAll" resultType="org.fd.entity.BookEntity">
-        SELECT * FROM book
+    <select id="queryAll" resultMap="bookEntityMap">
+        SELECT book_id, book_name, book_isbn FROM book
     </select>
-    <select id="queryByISBN" resultType="org.fd.entity.BookEntity" parameterType="org.fd.entity.BookEntity">
-        SELECT * FROM book WHERE book_isbn = #{bookISBN}
+    <select id="queryByISBN" resultType="org.fd.entity.BookEntity" parameterType="java.lang.String">
+        SELECT book_id, book_name, book_isbn FROM book WHERE book_isbn = #{bookISBN}
     </select>
-    <select id="queryByName" resultType="org.fd.entity.BookEntity">
-        SELECT * FROM book WHERE book_name LIKE CONCAT(CONCAT('%', #{bookName}), '%')
+    <select id="queryByName" resultMap="bookEntityMap" parameterType="java.lang.String">
+        SELECT book_id, book_name, book_isbn FROM book WHERE book_name LIKE CONCAT(CONCAT('%', #{bookName}), '%')
     </select>
 
 </mapper>
