@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.fd.dao.BookDao">
+    <insert id="insert">
+
+    </insert>
+    <delete id="DeleteById">
+        DELETE FROM bookEntity WHERE book_id = #{bookId}
+    </delete>
+
+    <select id="queryById" resultType="org.fd.entity.BookEntity" parameterType="java.lang.Long">
+        SELECT * FROM bookEntity WHERE book_id = #{bookId}
+    </select>
+
+    <select id="queryAll" resultType="org.fd.entity.BookEntity">
+        SELECT * FROM bookEntity
+    </select>
+
+</mapper>
