@@ -17,9 +17,17 @@
     <mvc:default-servlet-handler />
 
     <!--配置jsp-->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <bean name="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
+        <property name="order" value="1"/>
+    </bean>
+
+    <!--配置html-->
+    <bean name="htmlViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/html/"/>
+        <property name="suffix" value=".html"/>
+        <property name="order" value="2"/>
     </bean>
 
     <!--扫描web相关-->
