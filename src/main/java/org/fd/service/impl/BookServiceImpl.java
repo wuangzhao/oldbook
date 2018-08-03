@@ -22,11 +22,17 @@ public class BookServiceImpl implements BookService {
         return bookDao.queryAll();
     }
 
+    /**
+     * TODO
+     */
     @Override
     public BookEntity getByName(String bookName) {
         return null;
     }
 
+    /**
+     * TODO
+     */
     @Override
     public BookEntity getByISBN(String bookISBN) {
         return null;
