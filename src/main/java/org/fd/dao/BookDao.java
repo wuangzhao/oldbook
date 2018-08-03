@@ -23,7 +23,6 @@ public interface BookDao {
      * 按照书本序号删除
      * @param BookId 书本id
      */
-
     void DeleteById(int BookId);
 
     /**
