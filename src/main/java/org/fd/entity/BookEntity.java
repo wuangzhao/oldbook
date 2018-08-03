@@ -6,6 +6,8 @@ public class BookEntity {
 
     private String bookName;
 
+    private String bookISBN;
+
     public int getBookId() {
         return bookId;
     }
@@ -29,6 +31,4 @@ public class BookEntity {
     public void setBookISBN(String bookISBN) {
         this.bookISBN = bookISBN;
     }
-
-    private String bookISBN;
 }
