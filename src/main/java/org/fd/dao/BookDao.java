@@ -26,6 +26,10 @@ public interface BookDao {
 
     void DeleteById(Long BookId);
 
+    /**
+     * 新增书籍
+     * @param bookEntity
+     */
     void insert(BookEntity bookEntity);
 
 }
