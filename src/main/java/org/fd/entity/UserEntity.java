@@ -2,7 +2,7 @@ package org.fd.entity;
 
 import java.util.Date;
 
-public class User {
+public class UserEntity {
 
     private int userId;
 

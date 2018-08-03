@@ -1,6 +1,6 @@
 package org.fd.entity;
 
-public class Book {
+public class BookEntity {
 
     private int bookId;
 
