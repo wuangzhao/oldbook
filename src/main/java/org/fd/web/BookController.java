@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -25,8 +26,21 @@ public class BookController {
         return "list";
     }
 
-    @RequestMapping(value = "/detail/{bookId}", method = RequestMethod.GET)
-    private String bookId(Model model, @PathVariable("bookId") Integer bookId) {
+//    @RequestMapping(value = "/detail/{bookId}", method = RequestMethod.GET, params = "bookId")
+//    private String bookId(Model model, @PathVariable("bookId") Integer bookId) {
+//        if (bookId == null) {
+//            return "redirect:/book/list";
+//        }
+//        BookEntity book = bookService.getById(bookId);
+//        if (book == null) {
+//            return "redirect:/book/list";
+//        }
+//        model.addAttribute("book", book);
+//        return "detail";
+//    }
+
+    @RequestMapping(value = "/detail", method = RequestMethod.GET)
+    private String bookId(Model model, @RequestParam(value = "bookId", defaultValue = "") Integer bookId) {
         if (bookId == null) {
             return "redirect:/book/list";
         }
