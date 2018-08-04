@@ -2,18 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.fd.dao.BuyDao">
 
-
-    <resultMap id="BaseResultMap" type="org.fd.entity.BuyEntity">
-        <result column="buy_id" jdbcType="INTEGER" property="buyId" />
-        <result column="user_id" jdbcType="INTEGER" property="userId" />
-        <result column="sell_id" jdbcType="INTEGER" property="sellId" />
-    </resultMap>
-
-
-    <!--TODO-->
-    <!--有问题，求解中-->
-    <insert id="insert" >
-        INSERT INTO buy(user_id, sell_id) VALUES (#{userEntity.userId}, #{sellEntity.sellId})
+    <insert id="insert" parameterType="org.fd.entity.BuyEntity">
+        INSERT INTO buy(user_id, sell_id,buy_id) VALUES (#{userId}, #{sellId},#{buyId})
     </insert>
+
+    <!--没写全-->
+    <select id="queryByUser" resultType="org.fd.entity.BuyEntity" parameterType="org.fd.entity.UserEntity">
+        SELECT buy_id,sell_id,user_id FROM buy WHERE user_id = #{userId}
+    </select>
 
 </mapper>

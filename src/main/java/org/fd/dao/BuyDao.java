@@ -16,12 +16,11 @@ public interface BuyDao {
 
     /**
      * 插入一条新购买信息
-     * @param userEntity
-     * @param sellEntity
+     * @param
      * @return true 插入成功
      * @return false 插入失败
      */
-    boolean insert(@Param("userEntity") UserEntity userEntity, @Param("sellEntity") SellEntity sellEntity);
+    boolean insert(BuyEntity buyEntity);
 
     /**
      * 查询用户的购买记录

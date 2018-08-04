@@ -40,7 +40,7 @@ public interface BookDao {
      * @return true 成功
      * @return false 失败
      */
-    boolean DeleteById(int BookId);
+    boolean deleteById(int BookId);
 
     /**
      * 新增书籍
