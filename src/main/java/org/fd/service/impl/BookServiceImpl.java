@@ -4,9 +4,11 @@ import org.fd.dao.BookDao;
 import org.fd.entity.BookEntity;
 import org.fd.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class BookServiceImpl implements BookService {
 
     @Autowired
