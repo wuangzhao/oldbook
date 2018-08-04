@@ -2,14 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.fd.dao.BookDao">
+
     <insert id="insert" parameterType="org.fd.entity.BookEntity">
       INSERT INTO book(book_id, book_name, book_isbn) VALUES (#{bookId}, #{bookName}, #{bookISBN})
     </insert>
-    <delete id="DeleteById" parameterType="java.lang.Integer">
+    <delete id="deleteById" parameterType="java.lang.Integer">
         DELETE FROM book WHERE book_id = #{bookId}
     </delete>
 
-    <select id="queryById" resultType="org.fd.entity.BookEntity" parameterType="java.lang.Integer">
+    <select id="queryById" resultType="org.fd.entity.BookEntity" >
         SELECT book_id, book_name, book_isbn FROM book WHERE book_id = #{bookId}
     </select>
 

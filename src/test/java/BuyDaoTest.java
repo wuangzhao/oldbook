@@ -1,4 +1,5 @@
 import org.fd.dao.BuyDao;
+import org.fd.dao.UserDao;
 import org.fd.entity.SellEntity;
 import org.fd.entity.UserEntity;
 import org.junit.Test;
@@ -12,20 +13,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class BuyDaoTest {
 
     @Autowired
-    private BuyDao buyDao;
+    private UserDao userDao;
 
     @Test
     public void testInsert() throws Exception {
-
-        UserEntity userEntity = new UserEntity();
-        SellEntity sellEntity = new SellEntity();
-
-        userEntity.setUserId(100000);
-        sellEntity.setSellId(100001);
-
-        boolean isInsert = buyDao.insert(userEntity, sellEntity);
-
-        System.out.println(isInsert);
+        UserEntity s = userDao.queryUserById(1);
+        System.out.println("--------------------------");
+        System.out.println(s.getUserName());
+        System.out.println("---------------------");
 
     }
 }
