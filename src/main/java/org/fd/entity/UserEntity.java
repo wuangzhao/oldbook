@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class UserEntity {
 
-    private int userId;
+    private Integer userId;
 
     private String userName;
 
@@ -12,15 +12,15 @@ public class UserEntity {
 
     private String userEmail;
 
-    private String useTel;
+    private String userTel;
 
     private Date userBirthday;
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -48,12 +48,12 @@ public class UserEntity {
         this.userEmail = userEmail;
     }
 
-    public String getUseTel() {
-        return useTel;
+    public String getUserTel() {
+        return userTel;
     }
 
-    public void setUseTel(String useTel) {
-        this.useTel = useTel;
+    public void setUserTel(String userTel) {
+        this.userTel = userTel;
     }
 
     public Date getUserBirthday() {

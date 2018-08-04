@@ -2,33 +2,33 @@ package org.fd.entity;
 
 public class BuyEntity {
 
-    private int BuyId;
+    private Integer buyId;
 
-    private UserEntity userEntity;
+    private Integer userId;
 
-    private SellEntity sellEntity;
+    private Integer sellId;
 
-    public int getBuyId() {
-        return BuyId;
+    public Integer getBuyId() {
+        return buyId;
     }
 
-    public void setBuyId(int buyId) {
-        BuyId = buyId;
+    public void setBuyId(Integer buyId) {
+        this.buyId = buyId;
     }
 
-    public UserEntity getUserEntity() {
-        return userEntity;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserEntity(UserEntity userEntity) {
-        this.userEntity = userEntity;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public SellEntity getSellEntity() {
-        return sellEntity;
+    public Integer getSellId() {
+        return sellId;
     }
 
-    public void setSellEntity(SellEntity sellEntity) {
-        this.sellEntity = sellEntity;
+    public void setSellId(Integer sellId) {
+        this.sellId = sellId;
     }
 }

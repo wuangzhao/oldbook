@@ -1,34 +1,56 @@
 package org.fd.entity;
 
+import java.util.Date;
+
 public class SellEntity {
 
-    private int sellId;
+    private Integer sellId;
 
-    private UserEntity userEntity;
+    private Integer userId;
 
-    private BookEntity bookEntity;
+    private Integer bookId;
 
-    public int getSellId() {
+    private Date sellCreateTime;
+
+    private Integer sellStatus;
+
+    public Integer getSellId() {
         return sellId;
     }
 
-    public void setSellId(int sellId) {
+    public void setSellId(Integer sellId) {
         this.sellId = sellId;
     }
 
-    public UserEntity getUserEntity() {
-        return userEntity;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserEntity(UserEntity userEntity) {
-        this.userEntity = userEntity;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public BookEntity getBookEntity() {
-        return bookEntity;
+    public Integer getBookId() {
+        return bookId;
     }
 
-    public void setBookEntity(BookEntity bookEntity) {
-        this.bookEntity = bookEntity;
+    public void setBookId(Integer bookId) {
+        this.bookId = bookId;
+    }
+
+    public Date getSellCreateTime() {
+        return sellCreateTime;
+    }
+
+    public void setSellCreateTime(Date sellCreateTime) {
+        this.sellCreateTime = sellCreateTime;
+    }
+
+    public Integer getSellStatus() {
+        return sellStatus;
+    }
+
+    public void setSellStatus(Integer sellStatus) {
+        this.sellStatus = sellStatus;
     }
 }

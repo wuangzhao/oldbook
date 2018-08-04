@@ -3,7 +3,11 @@
 <mapper namespace="org.fd.dao.BuyDao">
 
 
-    <resultMap id="buyEntityList" type="org.fd.entity.BuyEntity"/>
+    <resultMap id="BaseResultMap" type="org.fd.entity.BuyEntity">
+        <result column="buy_id" jdbcType="INTEGER" property="buyId" />
+        <result column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="sell_id" jdbcType="INTEGER" property="sellId" />
+    </resultMap>
 
 
     <!--TODO-->
