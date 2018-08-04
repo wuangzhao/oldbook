@@ -12,19 +12,22 @@
     <title>Title</title>
 </head>
 <body>
-<form action="book/{bookId}" method="get">
+<form action="/detail" method="get">
     <table width="300px"; border="1">
         <tr>
             <td>Id</td>
             <td>名称</td>
             <td>ISBN</td>
         </tr>
-        <tr>
-            <td>${book.bookId}</td>
-            <td>${book.bookName}</td>
-            <td>${book.bookISBN}</td>
-        </tr>
+        <c:forEach items="${bookEntityList}" var="book" varStatus="status">
+            <tr>
+                <td>${book.bookId}</td>
+                <td>${book.bookName}</td>
+                <td>${book.bookISBN}</td>
+            </tr>
+        </c:forEach>
     </table>
 </form>
+
 </body>
 </html>
