@@ -23,8 +23,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserEntity getUserByTel(String userTel) {
-        return userDao.queryUserByTel(userTel);
+    public UserEntity getUserByEmail(String userEmail) {
+        return userDao.queryUserByEmail(userEmail);
     }
 
     @Override

@@ -3,8 +3,10 @@ package org.fd.web;
 import org.fd.entity.BookEntity;
 import org.fd.entity.SellEntity;
 import org.fd.entity.UserEntity;
+import org.fd.entity.UserInfoEntity;
 import org.fd.service.BookService;
 import org.fd.service.SellService;
+import org.fd.service.UserInfoService;
 import org.fd.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,7 +25,7 @@ public class SellController {
     SellService sellService;
 
     @Autowired
-    UserService userService;
+    UserInfoService userInfoService;
 
     @Autowired
     BookService bookService;
@@ -44,10 +46,9 @@ public class SellController {
         }
         model.addAttribute("sell", sellEntity);
         BookEntity bookEntity = bookService.getById(sellEntity.getBookId());
-        UserEntity userEntity = userService.getUserById(sellEntity.getUserId());
+        UserInfoEntity userInfoEntity = userInfoService.getUserInfoById(sellEntity.getUserId());
         model.addAttribute("book", bookEntity);
-        model.addAttribute("sellUserId", userEntity.getUserId());
-        model.addAttribute("sellUserName",userEntity.getUserName());
+        model.addAttribute("user", userInfoEntity);
         return "sell/detail";
     }
 

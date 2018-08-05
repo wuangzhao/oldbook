@@ -12,16 +12,16 @@ public interface UserDao {
     UserEntity queryUserById(int userId);
 
     /**
-     * 通过名字查用户
+     * 通过账号查用户
      * @param userName
      * @return
      */
     UserEntity queryUserByName(String userName);
 
     /**
-     * 通过手机号码查用户
-     * @param userTel 用户手机号
+     * 通过邮箱查用户
+     * @param userEmail 用户邮箱
      * @return
      */
-    UserEntity queryUserByTel(String userTel);
+    UserEntity queryUserByEmail(String userEmail);
 }

@@ -12,18 +12,18 @@ public interface UserService {
     UserEntity getUserById(int userId);
 
     /**
-     * 通过名字查用户
+     * 通过账号查用户
      * @param userName
      * @return
      */
     UserEntity getUserByName(String userName);
 
     /**
-     * 通过手机号码查用户
-     * @param userTel 用户手机号
+     * 通过邮箱查用户
+     * @param userEmail 用户邮箱
      * @return
      */
-    UserEntity getUserByTel(String userTel);
+    UserEntity getUserByEmail(String userEmail);
 
     /**
      * 登陆校验

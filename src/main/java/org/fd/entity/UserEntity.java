@@ -12,9 +12,7 @@ public class UserEntity {
 
     private String userEmail;
 
-    private String userTel;
-
-    private Date userBirthday;
+    private Date userCreateTime;
 
     public Integer getUserId() {
         return userId;
@@ -48,19 +46,11 @@ public class UserEntity {
         this.userEmail = userEmail;
     }
 
-    public String getUserTel() {
-        return userTel;
+    public Date getUserCreateTime() {
+        return userCreateTime;
     }
 
-    public void setUserTel(String userTel) {
-        this.userTel = userTel;
-    }
-
-    public Date getUserBirthday() {
-        return userBirthday;
-    }
-
-    public void setUserBirthday(Date userBirthday) {
-        this.userBirthday = userBirthday;
+    public void setUserCreateTime(Date userCreateTime) {
+        this.userCreateTime = userCreateTime;
     }
 }
