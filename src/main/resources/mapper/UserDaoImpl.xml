@@ -7,9 +7,14 @@
         FROM user WHERE user_id = #{userId}
     </select>
     
+    <!--<select id="queryUserByName" resultType="org.fd.entity.UserEntity" parameterType="java.lang.String">-->
+        <!--SELECT user_id,user_name,user_password,user_email,user_tel,user_birthday-->
+        <!--FROM user WHERE user_name LIKE CONCAT(CONCAT('%', #{userName}), '%')-->
+    <!--</select>-->
+
     <select id="queryUserByName" resultType="org.fd.entity.UserEntity" parameterType="java.lang.String">
         SELECT user_id,user_name,user_password,user_email,user_tel,user_birthday
-        FROM user WHERE user_name LIKE CONCAT(CONCAT('%', #{userName}), '%')
+        FROM user WHERE user_name = #{userName}
     </select>
     
     <select id="queryUserByTel" resultType="org.fd.entity.UserEntity" parameterType="java.lang.String">

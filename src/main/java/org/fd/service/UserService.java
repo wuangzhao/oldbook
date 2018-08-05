@@ -24,4 +24,12 @@ public interface UserService {
      * @return
      */
     UserEntity getUserByTel(String userTel);
+
+    /**
+     * 登陆校验
+     * @param userName
+     * @param userPassword
+     * @return
+     */
+    UserEntity checkLogin(String userName, String userPassword);
 }

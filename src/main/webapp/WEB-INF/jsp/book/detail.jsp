@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/detail" method="get">
+<form action="/book/getId" method="post">
     <table width="300px"; border="1">
         <tr>
             <td>Id</td>
@@ -21,12 +21,14 @@
         </tr>
         <c:forEach items="${bookEntityList}" var="book" varStatus="status">
             <tr>
+                <td><input type="checkbox" name="bookid" value="${book.bookId}"/></td>
                 <td>${book.bookId}</td>
                 <td>${book.bookName}</td>
                 <td>${book.bookISBN}</td>
             </tr>
         </c:forEach>
     </table>
+    <input type="submit">
 </form>
 
 </body>

@@ -4,7 +4,9 @@ import org.fd.dao.UserDao;
 import org.fd.entity.UserEntity;
 import org.fd.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -23,5 +25,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserEntity getUserByTel(String userTel) {
         return userDao.queryUserByTel(userTel);
+    }
+
+    @Override
+    public UserEntity checkLogin(String userName, String userPassword) {
+        UserEntity user = userDao.queryUserByName(userName);
+        if (user == null || user.getUserPassword().equals(userPassword)) {
+            return null;
+        }
+        return user;
     }
 }
