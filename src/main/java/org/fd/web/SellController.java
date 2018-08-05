@@ -3,6 +3,7 @@ package org.fd.web;
 import org.fd.entity.BookEntity;
 import org.fd.entity.SellEntity;
 import org.fd.entity.UserInfoEntity;
+import org.fd.model.BookAndSellQryModel;
 import org.fd.service.BookService;
 import org.fd.service.SellService;
 import org.fd.service.UserInfoService;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -50,12 +52,28 @@ public class SellController {
         return "sell/detail";
     }
 
+    /**
+     * 将Sell和Book包装类传进model
+     * 查询后，通过sell中的bookId查找book属性
+     * 再将sell和book装进 BookAndSellQryModel 中
+     * 将userSellList属性传入model中
+     * @param model
+     * @param userId 用户Id
+     * @return
+     */
     @RequestMapping(value = "user", method = RequestMethod.GET)
     public String userSellDetail(Model model,
                                  @RequestParam(value = "userId", defaultValue = "")
                                          Integer userId) {
         List<SellEntity> sellEntityList = sellService.getByUserId(userId);
-        model.addAttribute("sellList", sellEntityList);
+        List<BookAndSellQryModel> userSellList = new ArrayList<>();
+        for (int i = 0; i < sellEntityList.size(); i++) {
+            BookAndSellQryModel temp = new BookAndSellQryModel();
+            temp.setBook(bookService.getById(sellEntityList.get(i).getBookId()));
+            temp.setSell(sellEntityList.get(i));
+            userSellList.add(temp);
+        }
+        model.addAttribute("userSellList", userSellList);
         return "sell/user";
     }
 

@@ -15,19 +15,24 @@
 <form method="get">
     <table width="300px"; border="1">
         <tr>
-            <td>{sell.bookId}</td>
-            <td>{sell.sellStatus}</td>
-            <td>{sell.sellCreateTime}</td>
-            <td>{sell.userId}</td>
-            <td>{sell.sellId}</td>
+            <td>userSell.sell.sellStatus</td>
+            <td>userSell.sell.CreateTime</td>
+            <td>userSell.sell.userId</td>
+            <td>userSell.sell.sellId</td>
+            <td>userSell.book.bookId</td>
+            <td>userSell.book.bookName</td>
+            <td>userSell.book.bookISBN</td>
+
         </tr>
-        <c:forEach items="${sellList}" var="sell" varStatus="status">
+        <c:forEach items="${userSellList}" var="userSell" varStatus="status">
             <tr>
-                <td>${sell.bookId}</td>
-                <td>${sell.sellStatus}</td>
-                <td>${sell.sellCreateTime}</td>
-                <td>${sell.userId}</td>
-                <td>${sell.sellId}</td>
+                <td>${userSell.sell.sellStatus}</td>
+                <td>${userSell.sell.sellCreateTime}</td>
+                <td>${userSell.sell.userId}</td>
+                <td>${userSell.sell.sellId}</td>
+                <td>${userSell.book.bookId}</td>
+                <td>${userSell.book.bookName}</td>
+                <td>${userSell.book.bookISBN}</td>
             </tr>
         </c:forEach>
     </table>
