@@ -2,12 +2,10 @@ package org.fd.web;
 
 import org.fd.entity.BookEntity;
 import org.fd.entity.SellEntity;
-import org.fd.entity.UserEntity;
 import org.fd.entity.UserInfoEntity;
 import org.fd.service.BookService;
 import org.fd.service.SellService;
 import org.fd.service.UserInfoService;
-import org.fd.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
