@@ -12,7 +12,7 @@
 </head>
 <body>
 <h6>
-    SUCCESS
+    ${user.userId}
 </h6>
 
 </body>

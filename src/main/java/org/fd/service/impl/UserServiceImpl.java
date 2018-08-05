@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserEntity checkLogin(String userName, String userPassword) {
         UserEntity user = userDao.queryUserByName(userName);
-        if (user == null || user.getUserPassword().equals(userPassword)) {
+        if (user == null || !user.getUserPassword().equals(userPassword)) {
             return null;
         }
         return user;
