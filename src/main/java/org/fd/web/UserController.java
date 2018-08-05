@@ -22,14 +22,7 @@ public class UserController {
 
     @RequestMapping("login")
     public String login(Model model, String username, String password) {
-        System.out.println(username + "--");
-        System.out.println(password + "--");
-        System.out.println("--------------------------------------");
         UserEntity user = userService.checkLogin(username, password);
-        if (user != null) {
-            System.out.println(user.getUserName() + "--");
-            System.out.println(user.getUserPassword() + "--");
-        }
         if (user == null) {
             return "user/login";
         } else {

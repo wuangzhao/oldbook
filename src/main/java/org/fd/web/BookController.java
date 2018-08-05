@@ -57,6 +57,11 @@ public class BookController {
         return "book/detail";
     }
 
+    /**
+     * 获取前端UserId
+     * @param model
+     * @param bookid
+     */
     @RequestMapping(value = "getId", method = RequestMethod.POST)
     public void getByBookId(Model model, Integer[] bookid) {
         for (Integer i : bookid) {
