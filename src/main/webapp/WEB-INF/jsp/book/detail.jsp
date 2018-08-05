@@ -21,7 +21,7 @@
         </tr>
         <c:forEach items="${bookEntityList}" var="book" varStatus="status">
             <tr>
-                <td><input type="checkbox" name="bookid" value="${book.bookId}"/></td>
+                <td><input type="checkbox" name="bookId" value="${book.bookId}"/></td>
                 <td>${book.bookId}</td>
                 <td>${book.bookName}</td>
                 <td>${book.bookISBN}</td>

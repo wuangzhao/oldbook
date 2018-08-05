@@ -12,16 +12,16 @@
     <title>Title</title>
 </head>
 <body>
-<form method="get">
+<form action="book/list" method="get">
     <table width="300px"; border="1">
         <tr>
             <td>ID</td>
             <td>名称</td>
             <td>ISBN</td>
         </tr>
-        <c:forEach items="${sellList}" var="sell" varStatus="status">
+        <c:forEach items="${list}" var="book" varStatus="status">
             <tr>
-                <td>${sell.}</td>
+                <td>${book.bookId}</td>
                 <td>${book.bookName}</td>
                 <td>${book.bookISBN}</td>
             </tr>

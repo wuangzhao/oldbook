@@ -2,6 +2,7 @@ package org.fd.web;
 
 import org.fd.entity.BookEntity;
 import org.fd.entity.SellEntity;
+import org.fd.entity.UserEntity;
 import org.fd.entity.UserInfoEntity;
 import org.fd.model.BookAndSellQryModel;
 import org.fd.service.BookService;
@@ -14,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,6 +79,23 @@ public class SellController {
         }
         model.addAttribute("userSellList", userSellList);
         return "sell/user";
+    }
+
+    @RequestMapping(value = "newSell", method = RequestMethod.POST)
+    public String userNewSell(Model model, HttpSession session, BookEntity book) {
+        UserInfoEntity user = (UserInfoEntity) session.getAttribute("user");
+        if (user == null) {
+            return "redirect:/user/toLogin";
+        }
+        System.out.println(book.getBookId());
+        SellEntity sell = new SellEntity();
+        if (bookService.getById(book.getBookId()) == null) {
+            //TODO
+        } else {
+            int insertSellId = sellService.insertSell(user.getUserId(), book.getBookId());
+        }
+
+        return MessageFormat.format("redirect:user?userId={0}",user.getUserId().toString());
     }
 
 }

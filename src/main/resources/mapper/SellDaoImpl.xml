@@ -9,4 +9,8 @@
     <select id="queryByUserId" resultType="org.fd.entity.SellEntity">
         SELECT sell_id,user_id,book_id,sell_create_time,sell_status FROM sell WHERE user_id = #{userId}
     </select>
+    
+    <insert id="insertSell" parameterType="java.lang.Integer" useGeneratedKeys="true" keyProperty="sell_id">
+        INSERT INTO sell(user_id, book_id) VALUES (#{userId}, #{bookId})
+    </insert>
 </mapper>

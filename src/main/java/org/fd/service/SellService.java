@@ -18,4 +18,12 @@ public interface SellService {
      * @param userId 用户Id
      */
     List<SellEntity> getByUserId(int userId);
+
+    /**
+     *  插入新出售记录
+     * @param userId
+     * @param bookId
+     * @return
+     */
+    int insertSell(int userId, int bookId);
 }

@@ -37,5 +37,22 @@
         </c:forEach>
     </table>
 </form>
+
+<form action="/sell/newSell" method="post">
+    <table width="300px"; border="1">
+        <tr>
+            <td>Id</td>
+            <td>名称</td>
+            <td>ISBN</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="bookId"></td>
+            <td><input type="text" name="bookName"></td>
+            <td><input type="text" name="bookISBN"></td>
+        </tr>
+
+    </table>
+    <input type="submit">
+</form>
 </body>
 </html>

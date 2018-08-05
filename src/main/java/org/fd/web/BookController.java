@@ -60,11 +60,11 @@ public class BookController {
     /**
      * 获取前端UserId
      * @param model
-     * @param bookid
+     * @param bookId
      */
     @RequestMapping(value = "getId", method = RequestMethod.POST)
-    public void getByBookId(Model model, Integer[] bookid) {
-        for (Integer i : bookid) {
+    public void getByBookId(Model model, Integer[] bookId) {
+        for (Integer i : bookId) {
             System.out.println(i);
         }
     }

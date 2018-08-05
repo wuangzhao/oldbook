@@ -1,5 +1,6 @@
 package org.fd.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.fd.entity.SellEntity;
 
 import java.util.List;
@@ -18,4 +19,12 @@ public interface SellDao {
      * @param userId 用户Id
      */
     List<SellEntity> queryByUserId(int userId);
+
+    /**
+     *  插入新出售记录
+     * @param userId
+     * @param bookId
+     * @return
+     */
+    int insertSell(@Param("userId") int userId, @Param("bookId") int bookId);
 }

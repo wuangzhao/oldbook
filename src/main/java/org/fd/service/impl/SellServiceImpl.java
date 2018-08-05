@@ -22,4 +22,9 @@ public class SellServiceImpl implements SellService {
     public List<SellEntity> getByUserId(int userId) {
         return sellDao.queryByUserId(userId);
     }
+
+    @Override
+    public int insertSell(int userId, int bookId) {
+        return sellDao.insertSell(userId, bookId);
+    }
 }
