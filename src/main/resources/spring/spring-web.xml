@@ -20,14 +20,14 @@
     <bean name="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
-        <property name="order" value="1"/>
+        <property name="order" value="2"/>
     </bean>
 
     <!--配置html-->
     <bean name="htmlViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/html/"/>
         <property name="suffix" value=".html"/>
-        <property name="order" value="2"/>
+        <property name="order" value="1"/>
     </bean>
 
     <!--扫描web相关-->
