@@ -11,9 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-<h6>
+<h1>
     ${user.userId}
-</h6>
-
+</h1>
 </body>
 </html>
