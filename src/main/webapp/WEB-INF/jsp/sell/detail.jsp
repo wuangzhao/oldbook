@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<form method="post">
+<form method="post" action="/buy/buyBook">
     <table width="300px"; border="1">
         <tr>
             <td>sell.sellId</td>
@@ -24,16 +24,18 @@
             <td>sellUserName</td>
         </tr>
         <tr>
+            <input type="checkbox" name="sellId" value="${sell.sellId}">
             <td>${sell.sellId}</td>
             <td>${sell.sellCreateTime}</td>
             <td>${sell.sellStatus}</td>
             <td>${book.bookId}</td>
             <td>${book.bookISBN}</td>
             <td>${book.bookName}</td>
-            <td>${sellUserId}</td>
-            <td>${sellUserName}</td>
+            <td>${sell.userId}</td>
+            <td>${user.userNickname}</td>
         </tr>
     </table>
+    <input type="submit"/>
 </form>
 
 </body>

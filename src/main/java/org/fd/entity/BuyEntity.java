@@ -44,14 +44,4 @@ public class BuyEntity {
     public void setBuyCreateTime(Date buyCreateTime) {
         this.buyCreateTime = buyCreateTime;
     }
-
-    @Override
-    public String toString() {
-        return "BuyEntity{" +
-                "buyId=" + buyId +
-                ", userId=" + userId +
-                ", sellId=" + sellId +
-                ", buyCreateTime=" + buyCreateTime +
-                '}';
-    }
 }

@@ -2,7 +2,7 @@ package org.fd.enums;
 
 public enum BuyStateEnum {
 
-    SUCCESS(1, "购买失败"), HAS_SOLD(0, "已出售"), INNER_ERROR(-1, "系统异常");
+    SUCCESS(1, "购买失败"), HAS_SOLD(0, "已出售"), INNER_ERROR(-1, "系统异常"), ILLEGAL(-2, "非法操作");
 
     private int state;
 
