@@ -1,5 +1,6 @@
 package org.fd.service;
 
+import org.fd.dto.BuyExecution;
 import org.fd.entity.BuyEntity;
 import org.fd.entity.UserEntity;
 
@@ -9,8 +10,16 @@ public interface BuyService {
 
     /**
      * 查询用户的购买记录
-     * @param userEntity
+     * @param userId
      * @return 购买列表
      */
-    List<BuyEntity> getByUser(UserEntity userEntity);
+    List<BuyEntity> getByUserId(int userId);
+
+    /**
+     * 添加购买记录
+     * @param userId
+     * @param sellId
+     * @return
+     */
+    BuyExecution addBuy(int userId, int sellId);
 }

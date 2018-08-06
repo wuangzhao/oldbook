@@ -1,13 +1,13 @@
 package org.fd.model;
 
 import org.fd.entity.BookEntity;
-import org.fd.entity.SellEntity;
+import org.fd.entity.BuyEntity;
 
-public class BookAndSellQryModel {
+public class BookAndBuyQryModel {
 
     private BookEntity book;
 
-    private SellEntity sell;
+    private BuyEntity buy;
 
     public BookEntity getBook() {
         return book;
@@ -17,11 +17,11 @@ public class BookAndSellQryModel {
         this.book = book;
     }
 
-    public SellEntity getSell() {
-        return sell;
+    public BuyEntity getBuy() {
+        return buy;
     }
 
-    public void setSell(SellEntity sell) {
-        this.sell = sell;
+    public void setBuy(BuyEntity buy) {
+        this.buy = buy;
     }
 }

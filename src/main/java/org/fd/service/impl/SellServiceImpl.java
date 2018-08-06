@@ -6,7 +6,7 @@ import org.fd.dto.SellExecution;
 import org.fd.entity.SellEntity;
 import org.fd.enums.SellStateEnum;
 import org.fd.exception.FailureException;
-import org.fd.exception.SellException;
+import org.fd.exception.InnerException;
 import org.fd.service.SellService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,7 +54,7 @@ public class SellServiceImpl implements SellService {
             throw e1;
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
-            throw new SellException("sell inner error" + e.getMessage());
+            throw new InnerException("sell inner error" + e.getMessage());
         }
     }
 

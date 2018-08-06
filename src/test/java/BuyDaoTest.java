@@ -31,11 +31,9 @@ public class BuyDaoTest {
 
     @Test
     public void testQueryByUser() throws Exception {
-        UserEntity userEntity = new UserEntity();
-        userEntity.setUserId(100000);
-        List<BuyEntity> list = buyDao.queryByUser(userEntity);
+        List<BuyEntity> list = buyDao.queryByUserId(100000);
         for (BuyEntity buyEntity : list) {
-            System.out.println(buyEntity.getSellId());
+            System.out.println(buyEntity.toString());
         }
     }
 }

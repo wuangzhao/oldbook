@@ -1,6 +1,6 @@
 package org.fd.entity;
 
-import javax.xml.crypto.Data;
+import java.util.Date;
 
 public class BuyEntity {
 
@@ -10,7 +10,7 @@ public class BuyEntity {
 
     private Integer sellId;
 
-    private Data BuyCreateTime;
+    private Date buyCreateTime;
 
     public Integer getBuyId() {
         return buyId;
@@ -36,11 +36,22 @@ public class BuyEntity {
         this.sellId = sellId;
     }
 
-    public Data getBuyCreateTime() {
-        return BuyCreateTime;
+
+    public Date getBuyCreateTime() {
+        return buyCreateTime;
     }
 
-    public void setBuyCreateTime(Data buyCreateTime) {
-        BuyCreateTime = buyCreateTime;
+    public void setBuyCreateTime(Date buyCreateTime) {
+        this.buyCreateTime = buyCreateTime;
+    }
+
+    @Override
+    public String toString() {
+        return "BuyEntity{" +
+                "buyId=" + buyId +
+                ", userId=" + userId +
+                ", sellId=" + sellId +
+                ", buyCreateTime=" + buyCreateTime +
+                '}';
     }
 }
