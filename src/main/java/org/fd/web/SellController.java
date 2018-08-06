@@ -81,21 +81,32 @@ public class SellController {
         return "sell/user";
     }
 
+//    @RequestMapping(value = "newSell", method = RequestMethod.POST)
+//    public String userNewSell(Model model, HttpSession session, BookEntity book) {
+//        UserInfoEntity user = (UserInfoEntity) session.getAttribute("user");
+//        if (user == null) {
+//            return "redirect:/user/toLogin";
+//        }
+//        System.out.println(book.getBookId());
+//        SellEntity sell = new SellEntity();
+//        if (bookService.getById(book.getBookId()) == null) {
+//            //TODO
+//        } else {
+//            int insertSellId = sellService.insertSell(user.getUserId(), book.getBookId());
+//        }
+//
+//        return MessageFormat.format("redirect:user?userId={0}",user.getUserId().toString());
+//    }
+
     @RequestMapping(value = "newSell", method = RequestMethod.POST)
     public String userNewSell(Model model, HttpSession session, BookEntity book) {
         UserInfoEntity user = (UserInfoEntity) session.getAttribute("user");
         if (user == null) {
             return "redirect:/user/toLogin";
         }
-        System.out.println(book.getBookId());
-        SellEntity sell = new SellEntity();
-        if (bookService.getById(book.getBookId()) == null) {
-            //TODO
-        } else {
-            int insertSellId = sellService.insertSell(user.getUserId(), book.getBookId());
-        }
-
+        SellEntity sell = sellService.addSell(user.getUserId(), book.getBookId()).getSellEntity();
         return MessageFormat.format("redirect:user?userId={0}",user.getUserId().toString());
     }
+
 
 }

@@ -27,4 +27,5 @@ public interface SellDao {
      * @return
      */
     int insertSell(@Param("userId") int userId, @Param("bookId") int bookId);
+
 }

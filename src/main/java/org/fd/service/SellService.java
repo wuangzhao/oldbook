@@ -1,5 +1,6 @@
 package org.fd.service;
 
+import org.fd.dto.SellExecution;
 import org.fd.entity.SellEntity;
 
 import java.util.List;
@@ -26,4 +27,6 @@ public interface SellService {
      * @return
      */
     int insertSell(int userId, int bookId);
+
+    SellExecution addSell(int userId, int bookId);
 }

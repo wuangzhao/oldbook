@@ -2,7 +2,7 @@ package org.fd.enums;
 
 public enum SellStateEnum {
 
-    SUCCESS(1, "出售成功"), FAILURE(0, "出售失败"), INNER_ERROR(-1, "系统异常");
+    SUCCESS(1, "出售成功"), FAILURE(0, "找不到书"), INNER_ERROR(-1, "系统异常");
 
     private int state;
 
