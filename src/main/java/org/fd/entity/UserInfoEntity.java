@@ -8,8 +8,6 @@ public class UserInfoEntity {
 
     private String userNickname;
 
-    private String userTel;
-
     private Date userBirthday;
 
     public Integer getUserId() {
@@ -26,14 +24,6 @@ public class UserInfoEntity {
 
     public void setUserNickname(String userNickname) {
         this.userNickname = userNickname;
-    }
-
-    public String getUserTel() {
-        return userTel;
-    }
-
-    public void setUserTel(String userTel) {
-        this.userTel = userTel;
     }
 
     public Date getUserBirthday() {

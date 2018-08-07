@@ -7,9 +7,12 @@ import org.fd.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("user")
@@ -26,8 +29,8 @@ public class UserController {
         return "user/login";
     }
 
-    @RequestMapping("login")
-    public String login(Model model, String username, String password, HttpServletRequest request) {
+    @RequestMapping("checkLogin")
+    public String checkLogin(String username, String password, HttpServletRequest request) {
         UserEntity user = userService.checkLogin(username, password);
         if (user == null) {
             return "user/login";
@@ -36,6 +39,18 @@ public class UserController {
             request.getSession().setAttribute("user",userInfoEntity);
             return "user/success";
         }
+    }
+
+    @RequestMapping("outLogin")
+    public String outLogin(HttpSession session) {
+        session.invalidate();
+        return "toLogin";
+    }
+
+    @RequestMapping("{id}")
+    public @ResponseBody UserInfoEntity findUserById(@PathVariable("id") Integer userId) {
+        UserInfoEntity user = userInfoService.getUserInfoById(userId);
+        return user;
     }
 
 }

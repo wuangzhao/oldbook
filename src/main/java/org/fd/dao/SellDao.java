@@ -28,4 +28,6 @@ public interface SellDao {
      */
     int insertSell(@Param("userId") int userId, @Param("bookId") int bookId);
 
+    boolean deleteSell(SellEntity sellEntity);
+
 }

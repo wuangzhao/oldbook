@@ -33,4 +33,24 @@ public class BookServiceImpl implements BookService {
     public BookEntity getByISBN(String bookISBN) {
         return bookDao.queryByISBN(bookISBN);
     }
+
+    @Override
+    public BookEntity insertBook(BookEntity bookEntity) {
+        if (bookDao.insert(bookEntity)) {
+            return bookDao.queryByISBN(bookEntity.getBookISBN());
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public boolean deleteBook(Integer bookId) {
+        return bookDao.deleteById(bookId);
+    }
+
+    @Override
+    public BookEntity editBook(BookEntity bookEntity) {
+        BookEntity book = bookDao.queryById(bookDao.updateBook(bookEntity));
+        return book;
+    }
 }

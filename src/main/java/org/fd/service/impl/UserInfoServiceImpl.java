@@ -21,9 +21,4 @@ public class UserInfoServiceImpl implements UserInfoService {
     public UserInfoEntity getUserInfoByNickname(String userNickname) {
         return userInfoDao.queryUserInfoByNickname(userNickname);
     }
-
-    @Override
-    public UserInfoEntity getUserInfoByTel(String userTel) {
-        return userInfoDao.queryUserInfoByTel(userTel);
-    }
 }

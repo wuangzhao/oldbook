@@ -5,9 +5,8 @@ import org.fd.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -31,31 +30,31 @@ public class BookController {
         return "book/list";
     }
 
-    /**
-     * 书籍详细信息控制器
-     * @param model
-     * @param bookId
-     * @return 视图名
-     */
-    @RequestMapping(value = "detail")
-    public String queryByBookId(Model model, @RequestParam(value = "bookName", defaultValue = "") String bookName,
-                               @RequestParam(value = "bookId", defaultValue = "") Integer bookId
-                               ) {
-        if (bookId == null && bookName == null) {
-            return "redirect:/book/list";
-        }
-        List<BookEntity> bookEntityList = null;
-        if (bookId == null) {
-            bookEntityList = bookService.getByName(bookName);
-        } else {
-            bookEntityList = Collections.singletonList(bookService.getById(bookId));
-        }
-        if (bookEntityList == null) {
-            return "redirect:/book/list";
-        }
-        model.addAttribute("bookEntityList", bookEntityList);
-        return "book/detail";
+    @RequestMapping(value = "{bookId}", method = RequestMethod.POST)
+    public @ResponseBody BookEntity queryByBookId(@PathVariable("bookId") Integer bookId) {
+        BookEntity book = bookService.getById(bookId);
+        return book;
     }
+
+    @RequestMapping(value = "addBook", method = RequestMethod.POST)
+    public String addFruit(Model model, BookEntity book) {
+        if (bookService.insertBook(book) != null) {
+            return "success";
+        } else {
+            return "fail";
+        }
+    }
+
+    @RequestMapping(value = "deleteBook/{id}", method = RequestMethod.DELETE)
+    public String deleteBook(@PathVariable Integer id) {
+        if (bookService.deleteBook(id)) {
+            return "success";
+        } else {
+            return "fail";
+        }
+    }
+
+
 
     /**
      * 获取前端UserId

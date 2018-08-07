@@ -13,10 +13,10 @@ public interface UserDao {
 
     /**
      * 通过账号查用户
-     * @param userName
+     * @param userTel
      * @return
      */
-    UserEntity queryUserByName(String userName);
+    UserEntity queryUserByTel(String userTel);
 
     /**
      * 通过邮箱查用户
@@ -24,4 +24,8 @@ public interface UserDao {
      * @return
      */
     UserEntity queryUserByEmail(String userEmail);
+
+    int insert(UserEntity userEntity);
+
+    int update(UserEntity userEntity);
 }

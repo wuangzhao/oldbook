@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.fd.dao.SellDao">
+    <delete id="deleteSell" parameterType="org.fd.entity.SellEntity">
+        DELETE FROM sell
+        WHERE sell_id = ${sellId}
+    </delete>
 
     <select id="queryById" resultType="org.fd.entity.SellEntity">
         SELECT sell_id,user_id,book_id,sell_create_time,sell_status FROM sell WHERE sell_id = #{sellId}

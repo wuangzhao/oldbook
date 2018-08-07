@@ -18,8 +18,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserEntity getUserByName(String userName) {
-        return userDao.queryUserByName(userName);
+    public UserEntity getUserByTel(String userTel) {
+        return userDao.queryUserByTel(userTel);
     }
 
     @Override
@@ -28,8 +28,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserEntity checkLogin(String userName, String userPassword) {
-        UserEntity user = userDao.queryUserByName(userName);
+    public UserEntity checkLogin(String userTel, String userPassword) {
+        UserEntity user = userDao.queryUserByTel(userTel);
         if (user == null || !user.getUserPassword().equals(userPassword)) {
             return null;
         }

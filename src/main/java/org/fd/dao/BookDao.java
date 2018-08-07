@@ -50,4 +50,11 @@ public interface BookDao {
      */
     boolean insert(BookEntity bookEntity);
 
+    /**
+     * 修改
+     * @param bookEntity
+     * @return
+     */
+    int updateBook(BookEntity bookEntity);
+
 }

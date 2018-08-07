@@ -13,10 +13,10 @@ public interface UserService {
 
     /**
      * 通过账号查用户
-     * @param userName
+     * @param userTel
      * @return
      */
-    UserEntity getUserByName(String userName);
+    UserEntity getUserByTel(String userTel);
 
     /**
      * 通过邮箱查用户

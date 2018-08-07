@@ -6,13 +6,15 @@ public class UserEntity {
 
     private Integer userId;
 
-    private String userName;
-
     private String userPassword;
+
+    private String userTel;
+
+    private Date userCreateTime;
 
     private String userEmail;
 
-    private Date userCreateTime;
+
 
     public Integer getUserId() {
         return userId;
@@ -22,12 +24,12 @@ public class UserEntity {
         this.userId = userId;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUserTel() {
+        return userTel;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserTel(String userTel) {
+        this.userTel = userTel;
     }
 
     public String getUserPassword() {

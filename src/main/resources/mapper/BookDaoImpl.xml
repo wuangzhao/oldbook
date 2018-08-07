@@ -4,24 +4,39 @@
 <mapper namespace="org.fd.dao.BookDao">
 
     <insert id="insert" parameterType="org.fd.entity.BookEntity">
-      INSERT INTO book(book_id, book_name, book_isbn) VALUES (#{bookId}, #{bookName}, #{bookISBN})
+      INSERT INTO book(book_id, book_name, book_isbn)
+      VALUES (#{bookId}, #{bookName}, #{bookISBN})
     </insert>
     <delete id="deleteById" parameterType="java.lang.Integer">
-        DELETE FROM book WHERE book_id = #{bookId}
+        DELETE FROM book
+        WHERE book_id = #{bookId}
     </delete>
 
+    <update id="updateBook" parameterType="org.fd.entity.BookEntity" keyProperty="book_id">
+        UPDATE book
+        SET book_name = #{bookName}, book_isbn = #{bookISBN}
+        WHERE book_id = #{bookId}
+    </update>
+
     <select id="queryById" resultType="org.fd.entity.BookEntity" >
-        SELECT book_id, book_name, book_isbn FROM book WHERE book_id = #{bookId}
+        SELECT book_id, book_name, book_isbn
+        FROM book
+        WHERE book_id = #{bookId}
     </select>
 
     <select id="queryAll" resultType="org.fd.entity.BookEntity">
-        SELECT book_id, book_name, book_isbn FROM book
+        SELECT book_id, book_name, book_isbn
+        FROM book
     </select>
     <select id="queryByISBN" resultType="org.fd.entity.BookEntity" parameterType="java.lang.String">
-        SELECT book_id, book_name, book_isbn FROM book WHERE book_isbn = #{bookISBN}
+        SELECT book_id, book_name, book_isbn
+        FROM book WHERE book_isbn = #{bookISBN}
     </select>
     <select id="queryByName" resultType="org.fd.entity.BookEntity" parameterType="java.lang.String">
-        SELECT book_id, book_name, book_isbn FROM book WHERE book_name LIKE CONCAT(CONCAT('%', #{bookName}), '%')
+        SELECT book_id, book_name, book_isbn
+        FROM book
+        WHERE book_name
+        LIKE CONCAT(CONCAT('%', #{bookName}), '%')
     </select>
 
 </mapper>

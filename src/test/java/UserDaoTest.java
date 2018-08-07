@@ -13,9 +13,4 @@ public class UserDaoTest {
     @Autowired
     UserDao userDao;
 
-    @Test
-    public void testQueryByUserName() {
-        UserEntity user = userDao.queryUserByName("root");
-        System.out.println(user.getUserName());
-    }
 }

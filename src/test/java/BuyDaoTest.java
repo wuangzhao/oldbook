@@ -1,8 +1,5 @@
 import org.fd.dao.BuyDao;
-import org.fd.dao.UserDao;
 import org.fd.entity.BuyEntity;
-import org.fd.entity.SellEntity;
-import org.fd.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,17 +13,10 @@ import java.util.List;
 public class BuyDaoTest {
 
     @Autowired
-    private UserDao userDao;
-
-    @Autowired
     private BuyDao buyDao;
 
     @Test
     public void testInsert() throws Exception {
-        UserEntity s = userDao.queryUserById(1);
-        System.out.println("--------------------------");
-        System.out.println(s.getUserName());
-        System.out.println("---------------------");
     }
 
     @Test
