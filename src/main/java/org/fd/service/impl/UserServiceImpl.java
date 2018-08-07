@@ -22,10 +22,6 @@ public class UserServiceImpl implements UserService {
         return userDao.queryUserByTel(userTel);
     }
 
-    @Override
-    public UserEntity getUserByEmail(String userEmail) {
-        return userDao.queryUserByEmail(userEmail);
-    }
 
     @Override
     public UserEntity checkLogin(String userTel, String userPassword) {

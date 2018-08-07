@@ -37,18 +37,19 @@ public class SellServiceImpl implements SellService {
     }
 
     @Override
-    public int insertSell(int userId, int bookId) {
-        return sellDao.insertSell(userId, bookId);
+    public int insertSell(SellEntity sellEntity) {
+        return sellDao.insertSell(sellEntity);
     }
 
+
     @Override
-    public SellExecution addSell(int userId, int bookId) {
+    public SellExecution addSell(SellEntity sellEntity) {
         try {
-            if (bookDao.queryById(bookId) == null) {
+            if (bookDao.queryById(sellEntity.getBookId()) == null) {
                 throw new FailureException("no such book");
             } else {
-                int getSellId = sellDao.insertSell(userId, bookId);
-                return new SellExecution(bookId, SellStateEnum.SUCCESS, sellDao.queryById(getSellId));
+                int getSellId = sellDao.insertSell(sellEntity);
+                return new SellExecution(sellEntity.getBookId(), SellStateEnum.SUCCESS, sellDao.queryById(getSellId));
             }
         } catch (FailureException e1) {
             throw e1;

@@ -25,7 +25,7 @@ public class BookController {
      */
     @RequestMapping(value = "list", method = RequestMethod.GET)
     public String bookList(Model model) {
-        List<BookEntity> bookEntityList = bookService.getAll();
+        List<BookEntity> bookEntityList = bookService.getByName("");
         model.addAttribute("list", bookEntityList);
         return "book/list";
     }

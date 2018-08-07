@@ -18,12 +18,6 @@ public interface UserService {
      */
     UserEntity getUserByTel(String userTel);
 
-    /**
-     * 通过邮箱查用户
-     * @param userEmail 用户邮箱
-     * @return
-     */
-    UserEntity getUserByEmail(String userEmail);
 
     /**
      * 登陆校验

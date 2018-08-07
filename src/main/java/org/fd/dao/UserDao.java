@@ -4,6 +4,21 @@ import org.fd.entity.UserEntity;
 
 public interface UserDao {
 
+
+    /**
+     * 插入新数据
+     * @param userEntity
+     * @return
+     */
+    int insert(UserEntity userEntity);
+
+    /**
+     * 更新数据
+     * @param userEntity
+     * @return
+     */
+    int update(UserEntity userEntity);
+
     /**
      * 通过Id查用户
      * @param userId
@@ -12,20 +27,10 @@ public interface UserDao {
     UserEntity queryUserById(int userId);
 
     /**
-     * 通过账号查用户
+     * 通过手机查用户
      * @param userTel
      * @return
      */
     UserEntity queryUserByTel(String userTel);
 
-    /**
-     * 通过邮箱查用户
-     * @param userEmail 用户邮箱
-     * @return
-     */
-    UserEntity queryUserByEmail(String userEmail);
-
-    int insert(UserEntity userEntity);
-
-    int update(UserEntity userEntity);
 }

@@ -17,6 +17,13 @@ public interface BuyDao {
     int insert(BuyEntity buyEntity);
 
     /**
+     * 用户删除购买列表
+     * @param buyEntity
+     * @return
+     */
+    int userDelete(BuyEntity buyEntity);
+
+    /**
      * 查询用户的购买记录
      * @param userId
      * @return 购买列表
@@ -24,7 +31,7 @@ public interface BuyDao {
     List<BuyEntity> queryByUserId(int userId);
 
     /**
-     *
+     * 查询某一编号购买记录
      * @param buyId
      * @return
      */

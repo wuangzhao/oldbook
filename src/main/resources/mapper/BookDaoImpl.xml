@@ -4,15 +4,15 @@
 <mapper namespace="org.fd.dao.BookDao">
 
     <insert id="insert" parameterType="org.fd.entity.BookEntity">
-      INSERT INTO book(book_id, book_name, book_isbn)
-      VALUES (#{bookId}, #{bookName}, #{bookISBN})
+      INSERT INTO book(book_name, book_isbn)
+      VALUES (#{bookName}, #{bookISBN})
     </insert>
     <delete id="deleteById" parameterType="java.lang.Integer">
         DELETE FROM book
         WHERE book_id = #{bookId}
     </delete>
 
-    <update id="updateBook" parameterType="org.fd.entity.BookEntity" keyProperty="book_id">
+    <update id="updateBook" parameterType="org.fd.entity.BookEntity">
         UPDATE book
         SET book_name = #{bookName}, book_isbn = #{bookISBN}
         WHERE book_id = #{bookId}
@@ -24,10 +24,6 @@
         WHERE book_id = #{bookId}
     </select>
 
-    <select id="queryAll" resultType="org.fd.entity.BookEntity">
-        SELECT book_id, book_name, book_isbn
-        FROM book
-    </select>
     <select id="queryByISBN" resultType="org.fd.entity.BookEntity" parameterType="java.lang.String">
         SELECT book_id, book_name, book_isbn
         FROM book WHERE book_isbn = #{bookISBN}

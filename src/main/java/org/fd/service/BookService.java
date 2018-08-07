@@ -15,12 +15,6 @@ public interface BookService {
     BookEntity getById(int bookId);
 
     /**
-     * 查询所有书籍
-     * @return BookEntity
-     */
-    List<BookEntity> getAll();
-
-    /**
      * 通过名字查书
      * @param bookName 书本名称
      * @return BookEntity

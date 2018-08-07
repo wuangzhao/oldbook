@@ -2,7 +2,6 @@ package org.fd.web;
 
 import org.fd.entity.BookEntity;
 import org.fd.entity.SellEntity;
-import org.fd.entity.UserEntity;
 import org.fd.entity.UserInfoEntity;
 import org.fd.model.BookAndSellQryModel;
 import org.fd.service.BookService;
@@ -103,7 +102,10 @@ public class SellController {
         if (user == null) {
             return "redirect:/user/toLogin";
         }
-        SellEntity sell = sellService.addSell(user.getUserId(), book.getBookId()).getSellEntity();
+        SellEntity sell = new SellEntity();
+        sell.setUserId(user.getUserId());
+        sell.setBookId(book.getBookId());
+        sell = sellService.addSell(sell).getSellEntity();
         return MessageFormat.format("redirect:user?userId={0}",user.getUserId().toString());
     }
 

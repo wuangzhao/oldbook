@@ -22,11 +22,10 @@ public interface SellService {
 
     /**
      *  插入新出售记录
-     * @param userId
-     * @param bookId
+     * @param sellEntity
      * @return
      */
-    int insertSell(int userId, int bookId);
+    int insertSell(SellEntity sellEntity);
 
-    SellExecution addSell(int userId, int bookId);
+    SellExecution addSell(SellEntity sellEntity);
 }

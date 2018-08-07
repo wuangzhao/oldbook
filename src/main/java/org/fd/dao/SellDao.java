@@ -1,11 +1,24 @@
 package org.fd.dao;
 
-import org.apache.ibatis.annotations.Param;
 import org.fd.entity.SellEntity;
 
 import java.util.List;
 
 public interface SellDao {
+
+    /**
+     * 插入新出售记录
+     * @param sellEntity
+     * @return
+     */
+    int insertSell(SellEntity sellEntity);
+
+    /**
+     * 用户删除记录
+     * @param sellEntity
+     * @return
+     */
+    int userDelete(SellEntity sellEntity);
 
     /**
      * 通过出售id查出售单
@@ -20,14 +33,5 @@ public interface SellDao {
      */
     List<SellEntity> queryByUserId(int userId);
 
-    /**
-     *  插入新出售记录
-     * @param userId
-     * @param bookId
-     * @return
-     */
-    int insertSell(@Param("userId") int userId, @Param("bookId") int bookId);
-
-    boolean deleteSell(SellEntity sellEntity);
 
 }

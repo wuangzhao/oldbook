@@ -6,14 +6,20 @@
         INSERT INTO buy(user_id, sell_id) VALUES (#{userId}, #{sellId})
     </insert>
 
+    <update id="userDelete" parameterType="org.fd.entity.BuyEntity">
+        UPDATE buy
+        SET buy_delete = 1
+        WHERE buy_id = #{buyId}
+    </update>
+
     <select id="queryByUserId" parameterType="java.lang.Integer" resultType="org.fd.entity.BuyEntity">
-        SELECT buy_id,sell_id,user_id,buy_create_time
+        SELECT buy_id,sell_id,user_id,buy_create_time,buy_delete
         FROM buy
         WHERE user_id = #{userId}
     </select>
 
     <select id="queryByBuyId" parameterType="java.lang.Integer" resultType="org.fd.entity.BuyEntity">
-        SELECT buy_id,user_id,sell_id,buy_create_time
+        SELECT buy_id,user_id,sell_id,buy_create_time,buy_delete
         FROM buy
         WHERE buy_id = #{buyId}
     </select>

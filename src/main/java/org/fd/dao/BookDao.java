@@ -8,6 +8,29 @@ import java.util.List;
 public interface BookDao {
 
     /**
+     * 新增书籍
+     * @param bookEntity
+     * @return true 成功
+     * @return false 失败
+     */
+    int insert(BookEntity bookEntity);
+
+    /**
+     * 按照书本序号删除
+     * @param BookId 书本id
+     * @return true 成功
+     * @return false 失败
+     */
+    int deleteById(int BookId);
+
+    /**
+     * 修改
+     * @param bookEntity
+     * @return
+     */
+    int updateBook(BookEntity bookEntity);
+
+    /**
      * 通过Id查书
      * @param bookId  书本id
      * @return BookEntity
@@ -27,34 +50,4 @@ public interface BookDao {
      * @return
      */
     List<BookEntity> queryByName(String bookName);
-
-    /**
-     * 查询所有书籍
-     * @return BookEntity
-     */
-    List<BookEntity> queryAll();
-
-    /**
-     * 按照书本序号删除
-     * @param BookId 书本id
-     * @return true 成功
-     * @return false 失败
-     */
-    boolean deleteById(int BookId);
-
-    /**
-     * 新增书籍
-     * @param bookEntity
-     * @return true 成功
-     * @return false 失败
-     */
-    boolean insert(BookEntity bookEntity);
-
-    /**
-     * 修改
-     * @param bookEntity
-     * @return
-     */
-    int updateBook(BookEntity bookEntity);
-
 }

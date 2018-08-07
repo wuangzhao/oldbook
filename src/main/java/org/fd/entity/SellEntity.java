@@ -14,6 +14,8 @@ public class SellEntity {
 
     private Integer sellStatus;
 
+    private Integer sellDelete;
+
     public Integer getSellId() {
         return sellId;
     }
@@ -52,5 +54,13 @@ public class SellEntity {
 
     public void setSellStatus(Integer sellStatus) {
         this.sellStatus = sellStatus;
+    }
+
+    public Integer getSellDelete() {
+        return sellDelete;
+    }
+
+    public void setSellDelete(Integer sellDelete) {
+        this.sellDelete = sellDelete;
     }
 }

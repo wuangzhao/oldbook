@@ -20,11 +20,6 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<BookEntity> getAll() {
-        return bookDao.queryAll();
-    }
-
-    @Override
     public List<BookEntity> getByName(String bookName) {
         return bookDao.queryByName(bookName);
     }
@@ -36,7 +31,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public BookEntity insertBook(BookEntity bookEntity) {
-        if (bookDao.insert(bookEntity)) {
+        if (bookDao.insert(bookEntity) == 0) {
             return bookDao.queryByISBN(bookEntity.getBookISBN());
         } else {
             return null;
@@ -45,7 +40,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public boolean deleteBook(Integer bookId) {
-        return bookDao.deleteById(bookId);
+        return bookDao.deleteById(bookId) == 0;
     }
 
     @Override

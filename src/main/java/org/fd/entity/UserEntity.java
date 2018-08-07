@@ -12,8 +12,6 @@ public class UserEntity {
 
     private Date userCreateTime;
 
-    private String userEmail;
-
 
 
     public Integer getUserId() {
@@ -38,14 +36,6 @@ public class UserEntity {
 
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
-    }
-
-    public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
     }
 
     public Date getUserCreateTime() {

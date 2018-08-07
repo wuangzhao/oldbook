@@ -12,6 +12,8 @@ public class BuyEntity {
 
     private Date buyCreateTime;
 
+    private Integer sellDelete;
+
     public Integer getBuyId() {
         return buyId;
     }
@@ -43,5 +45,13 @@ public class BuyEntity {
 
     public void setBuyCreateTime(Date buyCreateTime) {
         this.buyCreateTime = buyCreateTime;
+    }
+
+    public Integer getSellDelete() {
+        return sellDelete;
+    }
+
+    public void setSellDelete(Integer sellDelete) {
+        this.sellDelete = sellDelete;
     }
 }
