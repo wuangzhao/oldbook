@@ -1,5 +1,6 @@
 package org.fd.service;
 
+import org.fd.dao.UserInfoDao;
 import org.fd.entity.UserInfoEntity;
 
 public interface UserInfoService {
@@ -17,4 +18,11 @@ public interface UserInfoService {
      * @return
      */
     UserInfoEntity getUserInfoByNickname(String userNickname);
+
+    /**
+     * 修改用户信息
+     * @param userInfoEntity
+     * @return
+     */
+    UserInfoEntity editUserInfo(UserInfoEntity userInfoEntity);
 }

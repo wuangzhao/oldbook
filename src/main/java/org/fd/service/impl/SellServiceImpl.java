@@ -27,7 +27,7 @@ public class SellServiceImpl implements SellService {
     private BookDao bookDao;
 
     @Override
-    public SellEntity getById(int sellId) {
+    public SellEntity getBySellId(int sellId) {
         return sellDao.queryById(sellId);
     }
 
@@ -35,12 +35,6 @@ public class SellServiceImpl implements SellService {
     public List<SellEntity> getByUserId(int userId) {
         return sellDao.queryByUserId(userId);
     }
-
-    @Override
-    public int insertSell(SellEntity sellEntity) {
-        return sellDao.insertSell(sellEntity);
-    }
-
 
     @Override
     public SellExecution addSell(SellEntity sellEntity) {

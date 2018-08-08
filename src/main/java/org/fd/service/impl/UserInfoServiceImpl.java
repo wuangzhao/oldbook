@@ -21,4 +21,13 @@ public class UserInfoServiceImpl implements UserInfoService {
     public UserInfoEntity getUserInfoByNickname(String userNickname) {
         return userInfoDao.queryUserInfoByNickname(userNickname);
     }
+
+    @Override
+    public UserInfoEntity editUserInfo(UserInfoEntity userInfoEntity) {
+        if (userInfoDao.update(userInfoEntity) == 0) {
+            return null;
+        } else {
+            return userInfoDao.queryUserInfoById(userInfoEntity.getUserId());
+        }
+    }
 }

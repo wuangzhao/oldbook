@@ -22,4 +22,18 @@ public interface BuyService {
      * @return
      */
     BuyExecution addBuy(int userId, int sellId);
+
+    /**
+     * 用户删除购买列表
+     * @param buyEntity
+     * @return
+     */
+    boolean userDelete(BuyEntity buyEntity);
+
+    /**
+     * 查询某一编号购买记录
+     * @param buyId
+     * @return
+     */
+    BuyEntity getByBuyId(int buyId);
 }

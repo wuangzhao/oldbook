@@ -1,3 +1,5 @@
+package serverTest;
+
 import org.fd.entity.UserEntity;
 import org.fd.service.UserService;
 import org.junit.Test;

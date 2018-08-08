@@ -30,7 +30,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public BookEntity insertBook(BookEntity bookEntity) {
+    public BookEntity addBook(BookEntity bookEntity) {
         if (bookDao.insert(bookEntity) == 0) {
             return bookDao.queryByISBN(bookEntity.getBookISBN());
         } else {

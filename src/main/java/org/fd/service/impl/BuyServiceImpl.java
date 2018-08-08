@@ -63,4 +63,18 @@ public class BuyServiceImpl implements BuyService {
             throw new InnerException("buy inner error" + e.getMessage());
         }
     }
+
+    @Override
+    public boolean userDelete(BuyEntity buyEntity) {
+        if (buyDao.userDelete(buyEntity) == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    @Override
+    public BuyEntity getByBuyId(int buyId) {
+        return buyDao.queryByBuyId(buyId);
+    }
 }

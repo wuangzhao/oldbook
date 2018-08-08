@@ -12,7 +12,7 @@ public interface SellService {
      * @param sellId 出售id
      * @return SellEntity
      */
-    SellEntity getById(int sellId);
+    SellEntity getBySellId(int sellId);
 
     /**
      * 根据用户Id查销售单
@@ -25,7 +25,5 @@ public interface SellService {
      * @param sellEntity
      * @return
      */
-    int insertSell(SellEntity sellEntity);
-
     SellExecution addSell(SellEntity sellEntity);
 }

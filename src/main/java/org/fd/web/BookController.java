@@ -5,10 +5,8 @@ import org.fd.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -38,7 +36,7 @@ public class BookController {
 
     @RequestMapping(value = "addBook", method = RequestMethod.POST)
     public String addFruit(Model model, BookEntity book) {
-        if (bookService.insertBook(book) != null) {
+        if (bookService.addBook(book) != null) {
             return "success";
         } else {
             return "fail";
@@ -53,8 +51,6 @@ public class BookController {
             return "fail";
         }
     }
-
-
 
     /**
      * 获取前端UserId

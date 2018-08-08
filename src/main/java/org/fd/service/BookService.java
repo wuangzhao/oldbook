@@ -2,7 +2,6 @@ package org.fd.service;
 
 import org.fd.entity.BookEntity;
 
-import java.awt.print.Book;
 import java.util.List;
 
 public interface BookService {
@@ -28,10 +27,25 @@ public interface BookService {
      */
     BookEntity getByISBN(String bookISBN);
 
-    BookEntity insertBook(BookEntity bookEntity);
+    /**
+     * 插入
+     * @param bookEntity
+     * @return
+     */
+    BookEntity addBook(BookEntity bookEntity);
 
+    /**
+     * 删除
+     * @param bookId
+     * @return
+     */
     boolean deleteBook(Integer bookId);
 
+    /**
+     * 修改
+     * @param bookEntity
+     * @return
+     */
     BookEntity editBook(BookEntity bookEntity);
 
 }

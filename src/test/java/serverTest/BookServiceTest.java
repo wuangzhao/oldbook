@@ -1,3 +1,5 @@
+package serverTest;
+
 import org.fd.service.BookService;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
