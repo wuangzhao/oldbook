@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" type="text/css" href="../../../static/css/df.css">
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../../../static/css/login.css">
+	<script type="text/javascript" src="../../../static/plugins/vue/vue.min.js"></script>
+</head>
+<body>
+	<div class="common">
+		<div class="headsss">
+			<div class="h">
+				就书城
+			</div>
+			<div class="til">
+				<ul class="til_ul">
+					<li><a ushref="welcome.html">首页</a></li>
+					<li><a href="">搜索书籍</a></li>
+					<li><a href="">购物车</a></li>
+					<li><a href="">登录</a></li>
+					<li><a href="">关于我们</a> </li>
+				</ul>
+			</div>
+			<hr>
+			<div class="search-d">
+				<input class="search-input" type="text" >
+				<button class="btn btn-info" type="submit" @click = "search"> 查询</button>
+			</div>
+
+		</div>
+		<div class="main">
+			<div class="logincon ">
+					<input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+					<input type="text" class="form-control" placeholder="password" aria-describedby="sizing-addon1">
+					<button id = "userlogin" @click="login"></button>
+			</div>
+		</div>
+		<div class="footer">
+			<div>
+				<hr>
+			</div>
+			<div class="lol">
+				hhh,hhh?
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
