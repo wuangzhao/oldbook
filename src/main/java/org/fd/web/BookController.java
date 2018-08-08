@@ -28,23 +28,18 @@ public class BookController {
         return "book/list";
     }
 
-    @RequestMapping(value = "{bookId}", method = RequestMethod.POST)
-    public @ResponseBody BookEntity queryByBookId(@PathVariable("bookId") Integer bookId) {
-        BookEntity book = bookService.getById(bookId);
-        return book;
+    @RequestMapping(value = "{bookId}", method = RequestMethod.GET)
+    public @ResponseBody BookEntity queryBookById(@PathVariable("bookId") Integer bookId) {
+        return bookService.getById(bookId);
     }
 
     @RequestMapping(value = "addBook", method = RequestMethod.POST)
-    public String addFruit(Model model, BookEntity book) {
-        if (bookService.addBook(book) != null) {
-            return "success";
-        } else {
-            return "fail";
-        }
+    public @ResponseBody BookEntity addBook(BookEntity book) {
+        return bookService.addBook(book);
     }
 
     @RequestMapping(value = "deleteBook/{id}", method = RequestMethod.DELETE)
-    public String deleteBook(@PathVariable Integer id) {
+    public String deleteBookById(@PathVariable Integer id) {
         if (bookService.deleteBook(id)) {
             return "success";
         } else {
@@ -52,15 +47,4 @@ public class BookController {
         }
     }
 
-    /**
-     * 获取前端UserId
-     * @param model
-     * @param bookId
-     */
-    @RequestMapping(value = "getId", method = RequestMethod.POST)
-    public void getByBookId(Model model, Integer[] bookId) {
-        for (Integer i : bookId) {
-            System.out.println(i);
-        }
-    }
 }

@@ -1,6 +1,5 @@
 package org.fd.service;
 
-import org.fd.dao.UserInfoDao;
 import org.fd.entity.UserInfoEntity;
 
 public interface UserInfoService {
