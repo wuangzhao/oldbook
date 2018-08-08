@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.fd.dao.ShoppingCartDao">
+    <insert id="insertShoppingCart" parameterType="org.fd.entity.ShoppingCartEntity">
+        INSERT INTO shopping_cart(sell_id, user_id)
+        VALUES (#{sellId}, #{userId})
+    </insert>
+    <delete id="deleteShoppingCart" parameterType="org.fd.entity.ShoppingCartEntity">
+        DELETE FROM shopping_cart
+        WHERE user_id = #{userId} AND sell_id = #{sellId}
+    </delete>
+
+    <select id="queryShoppingCartListByUserId" parameterType="java.lang.Integer" resultType="org.fd.entity.ShoppingCartEntity">
+        SELECT sell_id, user_id
+        FROM shopping_cart
+        WHERE user_id = #{userId}
+    </select>
+
+</mapper>
