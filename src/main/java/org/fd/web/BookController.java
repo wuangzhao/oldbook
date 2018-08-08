@@ -22,10 +22,9 @@ public class BookController {
      * @return 视图名
      */
     @RequestMapping(value = "list", method = RequestMethod.GET)
-    public String bookList(Model model) {
+    public @ResponseBody List<BookEntity> bookList(Model model) {
         List<BookEntity> bookEntityList = bookService.getByName("");
-        model.addAttribute("list", bookEntityList);
-        return "book/list";
+        return bookEntityList;
     }
 
     @RequestMapping(value = "{bookId}", method = RequestMethod.GET)

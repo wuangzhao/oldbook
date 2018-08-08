@@ -70,7 +70,7 @@ public class SellController {
     }
 
     @RequestMapping(value = "newSell", method = RequestMethod.POST)
-    public String userNewSell(Model model, HttpSession session, BookEntity book) {
+    public String userNewSell(HttpSession session, BookEntity book) {
         UserInfoEntity user = (UserInfoEntity) session.getAttribute("user");
         if (user == null) {
             return "redirect:/user/toLogin";
