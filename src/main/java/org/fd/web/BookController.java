@@ -38,7 +38,7 @@ public class BookController {
         return bookService.addBook(book);
     }
 
-    @RequestMapping(value = "deleteBook/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "bookManage/{id}", method = RequestMethod.DELETE)
     public String deleteBookById(@PathVariable Integer id) {
         if (bookService.deleteBook(id)) {
             return "success";

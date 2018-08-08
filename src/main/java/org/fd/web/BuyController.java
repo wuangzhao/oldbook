@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
@@ -35,7 +36,7 @@ public class BuyController {
     @Autowired
     SellService sellService;
 
-    @RequestMapping("list/{userId}")
+    @RequestMapping(value = "list/{userId}", method = RequestMethod.GET)
     public @ResponseBody List<BookAndBuyQryModel>
     getBuyDetailByUserId(HttpSession session, @PathVariable int userId) {
         UserInfoEntity user = (UserInfoEntity) session.getAttribute("user");
@@ -46,7 +47,6 @@ public class BuyController {
         List<BookAndBuyQryModel> bBList = new ArrayList<>();
         for (BuyEntity buyEntity : buyEntityList) {
             BookAndBuyQryModel temp = new BookAndBuyQryModel();
-            System.out.println(buyEntity.toString());
             temp.setBuy(buyEntity);
             temp.setBook(bookService.getById(sellService.getBySellId(buyEntity.getSellId()).getBookId()));
             bBList.add(temp);
@@ -62,5 +62,25 @@ public class BuyController {
         }
         BuyEntity buy = buyService.addBuy(user.getUserId(), sellId).getBuyEntity();
         return MessageFormat.format("redirect:user?list={0}",user.getUserId().toString());
+    }
+
+    @RequestMapping("deleteBuy")
+    public String deleteBuy(HttpSession session, BuyEntity buy) {
+        UserInfoEntity user = (UserInfoEntity) session.getAttribute("user");
+        if (user == null || user.getUserId() != buy.getUserId()) {
+            return "redirect:/user/toLogin";
+        }
+        buyService.userDelete(buy);
+        return "success";
+    }
+
+    @RequestMapping(value = "detail/{buyId}", method = RequestMethod.GET)
+    public @ResponseBody BuyEntity getBuyDetailByBuyId(@PathVariable Integer buyId, HttpSession session) {
+        UserInfoEntity user = (UserInfoEntity) session.getAttribute("user");
+        BuyEntity buyEntity = buyService.getByBuyId(buyId);
+        if (user == null || buyEntity == null || user.getUserId() != buyEntity.getUserId()) {
+            return null;
+        }
+        return buyEntity;
     }
 }
