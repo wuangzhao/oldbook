@@ -4,6 +4,7 @@ import org.fd.entity.UserEntity;
 import org.fd.entity.UserInfoEntity;
 import org.fd.service.UserInfoService;
 import org.fd.service.UserService;
+import org.fd.util.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,14 +32,14 @@ public class UserController {
     }
 
     @RequestMapping("checkLogin")
-    public String checkLogin(String username, String password, HttpServletRequest request) {
+    public R checkLogin(String username, String password, HttpServletRequest request) {
         UserEntity user = userService.checkLogin(username, password);
         if (user == null) {
-            return "user/login";
+            return R.ok();
         } else {
             UserInfoEntity userInfoEntity = userInfoService.getUserInfoById(user.getUserId());
             request.getSession().setAttribute("user",userInfoEntity);
-            return "user/success";
+            return R.ok();
         }
     }
 

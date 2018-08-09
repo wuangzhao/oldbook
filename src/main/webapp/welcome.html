@@ -6,13 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>tea</title>
 	<link rel="stylesheet" type="text/css" href="static/css/df.css">
-	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"/>
+	<link href="static/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
 	<script src="static/plugins/vue/vue.min.js"></script>
-	<script type="text/javascript" src="static/js/welcome-js.js"></script>
-	<style type="text/css">		
-
-</style>
+	
+	
 </head>
 <body>
 	<div class="common">
@@ -25,19 +23,19 @@
 				<li><a href="welcome.html">首页</a></li>
 				<li><a href="">搜索书籍</a></li>
 				<li><a href="">购物车</a></li>
-				<li><a href="">登录</a></li>
+				<li><a href="html/user/login.html">登录</a></li>
 				<li><a href="">关于我们</a> </li>
 			</ul>
 		</div>
 		<hr>
 		<div class="search-d">
-			<input class="search-input" type="text" >
+			<input class="search-input" type="text" v-model="searchText" >
 			<button class="btn btn-info" type="submit" @click = "search"> 查询</button>
 		</div>
 		
 	</div>
 
-	<div class="main">
+	<div class="fff" id="rrapp">
 		<div class="slider">
 			<div class="bd">
 				<a href="javascript:;" class="leftBtn"><</a>
@@ -61,6 +59,72 @@
 			<h2>精选书籍</h2>
 			<div class="education">
 				<h3>教育</h3>
+				<div class="row">
+					<div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+							<img src="..." alt="...">
+							<div class="caption">
+								<h3>Thumbnail label</h3>
+								<p>...</p>
+								<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+							<img src="..." alt="...">
+							<div class="caption">
+								<h3>Thumbnail label</h3>
+								<p>...</p>
+								<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+							<img src="..." alt="...">
+							<div class="caption">
+								<h3>Thumbnail label</h3>
+								<p>...</p>
+								<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<h3>小说</h3>
+				<div class="row">
+					<div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+							<img src="..." alt="...">
+							<div class="caption">
+								<h3>Thumbnail label</h3>
+								<p>...</p>
+								<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+							<img src="..." alt="...">
+							<div class="caption">
+								<h3>Thumbnail label</h3>
+								<p>...</p>
+								<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+							<img src="..." alt="...">
+							<div class="caption">
+								<h3>Thumbnail label</h3>
+								<p>...</p>
+								<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -72,7 +136,14 @@
 		<div class="lol">
 			哈哈哈，哈哈哈？
 		</div>
+		<address>
+			<strong>Twitter, Inc. </strong>
+			1355 Market Street, Suite 900
+			San Francisco, CA 94103
+			<abbr title="Phone">P:</abbr> (123) 456-7890
+		</address>
 	</div>
 	</div>
 </body>
+<script type="text/javascript" src="static/js/welcome-js.js"></script>
 </html>

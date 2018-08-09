@@ -1,0 +1,12 @@
+.logoncon{
+	width: 800px;
+	margin: 900px;
+	opacity: 0.8;
+	margin: auto;
+}
+.logoncon div{
+	margin: 8px auto;
+}
+.form-group .col-sm-2{
+	font-size: 20px;
+}

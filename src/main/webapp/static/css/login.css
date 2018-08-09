@@ -1,7 +1,32 @@
+.main{
+	width: 960px;
+	padding: 0;
+	margin: 0 auto;
+	height: 600px;
+	background-color: #999999;
+}
+
+
 .logincon{
-	width: 400px;
+	width: 800px;
+	margin: 900px;
+	opacity: 0.8;
 	margin: auto;
 }
-.logincon input{
+.logincon div{
+	margin: 8px auto;
+}
+.logincon .form-group input{
 	height: 43px;
+}
+.btn.btn-default{
+	vertical-align:middle;
+	margin: 0 auto;	
+}
+.form-group .col-sm-2{
+	font-size: 20px;
+}
+
+.footer{
+	margin: auto;
 }
