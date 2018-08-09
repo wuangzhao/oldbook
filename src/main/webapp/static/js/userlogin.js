@@ -1,27 +1,29 @@
 var vm = new Vue({
-	el:'#fffs',
+	el:'#docommon',
 	data :{
-		ss:'1231',
+		searchText:'',
 		user:{
 			username:'',
 			password:''
 		}
 	},
-	methods :{
-		login : function(){
+	methods:{
+		search:function(){
+
+		},
+		userlogin:function(){
 			$.ajax({
-				url: '/user/checkLogin',
-				data: {'username': vm.user.username,
-				'password':vm.user.password},
+				url:'/user/checkLogin',
+				data:{'username':vm.user.username,'password':vm.user.password},
 				success : function(r){
-					if (r.code == 0) {
-						alert('登录成功');
+					if(r.code == 0){
+						alert('ojbk');
+					}
+					else{
+						alert('nononoon');
 					}
 				}
 			})
-
-
 		}
 	}
-
 })

@@ -32,13 +32,18 @@ public class UserController {
     }
 
     @RequestMapping("checkLogin")
-    public R checkLogin(String username, String password, HttpServletRequest request) {
+    @ResponseBody
+    public R checkLogin(String username, String password) {
+        System.out.println(username+"     "+password+"++++++++++++++++++++++++++");
         UserEntity user = userService.checkLogin(username, password);
+        System.out.println(user.getUserTel());
         if (user == null) {
-            return R.ok();
+            System.out.println("cuocuoucouco");
+            return R.error();
         } else {
+            System.out.println("dui");
             UserInfoEntity userInfoEntity = userInfoService.getUserInfoById(user.getUserId());
-            request.getSession().setAttribute("user",userInfoEntity);
+            //request.getSession().setAttribute("user",userInfoEntity);
             return R.ok();
         }
     }
