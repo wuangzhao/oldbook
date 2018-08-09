@@ -9,7 +9,6 @@ import org.fd.service.SellService;
 import org.fd.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -70,7 +69,7 @@ public class SellController {
     }
 
     @RequestMapping(value = "newSell", method = RequestMethod.POST)
-    public String userNewSell(Model model, HttpSession session, BookEntity book) {
+    public String userNewSell(HttpSession session, BookEntity book) {
         UserInfoEntity user = (UserInfoEntity) session.getAttribute("user");
         if (user == null) {
             return "redirect:/user/toLogin";
